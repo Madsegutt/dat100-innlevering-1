@@ -14,7 +14,7 @@ public class JP3_O1 {
 
         in.close();
 
-        double sats1 = (trinn1 - trinn0) * 0.017, sats2 = (trinn2 - trinn1) * 0.04 + sats1, sats3 = (trinn3 - trinn2) * 0.137 + sats2, sats4 = (trinn4 - trinn3) * 0.168 + sats3, sats5 = (lonn - trinn5) * 0.178 + sats4;
+        double sats1 = (Math.min(lonn, trinn1) - trinn0) * 0.017, sats2 = (Math.min(lonn, trinn2) - trinn1) * 0.04 + sats1, sats3 = (Math.min(lonn, trinn3) - trinn2) * 0.137 + sats2, sats4 = (Math.min(lonn, trinn4) - trinn3) * 0.168 + sats3, sats5 = (lonn - trinn5) * 0.178 + sats4;
 
         if(lonn <= trinn0){
             IO.print("Du betaler ikke trinnskatt.");
